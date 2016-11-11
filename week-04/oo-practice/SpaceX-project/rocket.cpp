@@ -21,6 +21,6 @@ void Rocket::launch() {
   fuel_level -= fuel_consumption;
 }
 
-string Rocket::get_stats() {
+string Rocket::get_stats() const {
   return "Type: " + type_name + ", Fuel: " + to_string(fuel_level) + ", Launches: " + to_string(launches);
 }

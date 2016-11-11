@@ -15,7 +15,7 @@ public:
   Rocket(unsigned int fuel_level);
   const unsigned int get_id() const;
   void launch();
-  std::string get_stats();
+  std::string get_stats() const;
 };
 
 #endif /* ROCKET_H */
