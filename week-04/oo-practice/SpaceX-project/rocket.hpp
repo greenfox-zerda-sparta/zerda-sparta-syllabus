@@ -4,9 +4,11 @@
 #include <string>
 
 class Rocket {
+private:
   unsigned int id;
   unsigned int fuel_level;
   unsigned int launches;
+protected:
   std::string type_name;
 public:
   Rocket(unsigned int fuel_level);

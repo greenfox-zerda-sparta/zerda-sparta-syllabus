@@ -1,11 +1,11 @@
 #include <iostream>
-#include "rocket.hpp"
+#include "falcon1.hpp"
 
 using namespace std;
 
 int main() {
-  Rocket r1(10);
-  Rocket r2(10);
+  Falcon1 r1(10);
+  Falcon1 r2(10);
   cout << r1.get_stats() << endl;
   cout << r2.get_stats() << endl;
   cout << r2.get_id() << endl;

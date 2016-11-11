@@ -9,7 +9,6 @@ Rocket::Rocket(unsigned int fuel_level) {
   this->launches = 0;
   this->id = LAST_ID;
   LAST_ID++;
-  type_name = "Falcon1";
   this->fuel_level = fuel_level;
 }
 
