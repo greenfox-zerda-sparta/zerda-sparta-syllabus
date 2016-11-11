@@ -14,6 +14,7 @@ public:
   std::string get_stats();
   void add_rocket(Rocket& rocket);
   unsigned int get_all_launches();
+  std::string get_all_rocket_stats();
 };
 
 #endif /* SPACEX_H */

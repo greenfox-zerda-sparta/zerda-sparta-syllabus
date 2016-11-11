@@ -9,13 +9,19 @@ SpaceX::SpaceX(unsigned int fuel) {
 
 std::string SpaceX::get_stats() {
   std::string output = "";
-  output += "Fuel: " + to_string(fuel);
-  output += ", Launches: " + to_string(get_all_launches())  + "\n";
+  output += "Fuel: " + to_string(fuel) + ", ";
+  output += "Launches: " + to_string(get_all_launches())  + "\n";
   output += "Rockets:\n";
-  for (int i = 0; i < rocket_count; ++i) {
-    output += rockets[i]->get_stats() + "\n";
-  }
+  output += get_all_rocket_stats();
   return output;
+}
+
+std::string SpaceX::get_all_rocket_stats() {
+  std::string rocket_stats = "";
+  for (int i = 0; i < rocket_count; ++i) {
+    rocket_stats += rockets[i]->get_stats() + "\n";
+  }
+  return rocket_stats;
 }
 
 unsigned int SpaceX::get_all_launches() {

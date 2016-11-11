@@ -15,7 +15,6 @@ int main() {
 
   r1.refill();
   r2.refill();
-  cout << r1.get_stats() << endl;
   r1.launch();
   r1.launch();
 
