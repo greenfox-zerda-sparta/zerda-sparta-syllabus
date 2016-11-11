@@ -45,18 +45,18 @@ void SpaceX::add_rocket(Rocket& rocket) {
   ++rocket_count;
 }
 
-void SpaceX::refill_by_id(unsigned int id) {
+Rocket& SpaceX::get_rocket_by_id(unsigned int id) {
   for (int i = 0; i < rocket_count; ++i) {
     if (rockets[i]->get_id() == id) {
-      rockets[i]->refill();
+      return *rockets[i];
     }
   }
 }
 
+void SpaceX::refill_by_id(unsigned int id) {
+  get_rocket_by_id(id).refill();
+}
+
 void SpaceX::launch_by_id(unsigned int id) {
-  for (int i = 0; i < rocket_count; ++i) {
-    if (rockets[i]->get_id() == id) {
-      rockets[i]->launch();
-    }
-  }
+  get_rocket_by_id(id).launch();
 }
