@@ -44,3 +44,11 @@ void SpaceX::add_rocket(Rocket& rocket) {
   rockets = temp;
   ++rocket_count;
 }
+
+void SpaceX::refill_by_id(unsigned int id) {
+  for (int i = 0; i < rocket_count; ++i) {
+    if (rockets[i]->get_id() == id) {
+      rockets[i]->refill();
+    }
+  }
+}

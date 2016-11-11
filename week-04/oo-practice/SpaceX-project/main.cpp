@@ -13,8 +13,8 @@ int main() {
   spacex.add_rocket(r1);
   spacex.add_rocket(r2);
 
-  r1.refill();
-  r2.refill();
+  spacex.refill_by_id(0);
+  spacex.refill_by_id(1);
   r1.launch();
   r1.launch();
 
