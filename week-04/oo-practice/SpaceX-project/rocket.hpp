@@ -5,6 +5,7 @@
 
 class Rocket {
 private:
+  static unsigned int LAST_ID;
   unsigned int id;
   unsigned int fuel_level;
   unsigned int launches;

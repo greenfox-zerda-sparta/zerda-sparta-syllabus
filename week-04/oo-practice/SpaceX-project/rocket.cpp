@@ -3,11 +3,11 @@
 
 using namespace std;
 
-unsigned int LAST_ID = 0;
+unsigned int Rocket::LAST_ID = 0;
 
 Rocket::Rocket() {
   this->launches = 0;
-  this->id = LAST_ID;
+  this->id = Rocket::LAST_ID;
   LAST_ID++;
   this->fuel_level = 0;
 }
