@@ -15,8 +15,8 @@ int main() {
 
   spacex.refill_by_id(0);
   spacex.refill_by_id(1);
-  r1.launch();
-  r1.launch();
+  spacex.launch_by_id(0);
+  spacex.launch_by_id(1);
 
 
   cout << spacex.get_stats() << endl;

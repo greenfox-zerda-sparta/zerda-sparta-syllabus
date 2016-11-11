@@ -16,6 +16,7 @@ public:
   unsigned int get_all_launches();
   std::string get_all_rocket_stats();
   void refill_by_id(unsigned int id);
+  void launch_by_id(unsigned int id);
 };
 
 #endif /* SPACEX_H */
