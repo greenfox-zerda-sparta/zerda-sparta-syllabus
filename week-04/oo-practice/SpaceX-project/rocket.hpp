@@ -16,6 +16,7 @@ protected:
 public:
   Rocket();
   const unsigned int get_id() const;
+  const unsigned int get_launches() const;
   void launch();
   const unsigned int refill();
   std::string get_stats() const;

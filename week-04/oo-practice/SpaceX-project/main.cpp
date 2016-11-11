@@ -13,13 +13,15 @@ int main() {
   spacex.add_rocket(r1);
   spacex.add_rocket(r2);
 
-  cout << spacex.get_stats() << endl;
-
   r1.refill();
   r2.refill();
   cout << r1.get_stats() << endl;
   r1.launch();
   r1.launch();
+
+
+  cout << spacex.get_stats() << endl;
+
   cout << r1.get_stats() << endl;
   cout << "used fuel:" << r1.refill() << endl;
   cout << r1.get_stats() << endl;

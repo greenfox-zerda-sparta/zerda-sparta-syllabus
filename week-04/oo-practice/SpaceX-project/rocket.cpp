@@ -16,6 +16,10 @@ const unsigned int Rocket::get_id() const {
   return id;
 }
 
+const unsigned int Rocket::get_launches() const {
+  return launches;
+}
+
 void Rocket::launch() {
   ++launches;
   fuel_level -= fuel_consumption;
