@@ -8,6 +8,8 @@ int main() {
   Falcon1 r1(10);
   Falcon9 r2(10);
   cout << r1.get_stats() << endl;
+  r1.launch();
+  cout << r1.get_stats() << endl;
   cout << r2.get_stats() << endl;
   cout << r2.get_id() << endl;
 

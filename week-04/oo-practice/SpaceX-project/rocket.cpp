@@ -16,6 +16,11 @@ const unsigned int Rocket::get_id() const {
   return id;
 }
 
+void Rocket::launch() {
+  ++launches;
+  fuel_level -= fuel_consumption;
+}
+
 string Rocket::get_stats() {
   return "Type: " + type_name + ", Fuel: " + to_string(fuel_level) + ", Launches: " + to_string(launches);
 }
