@@ -5,7 +5,7 @@
 
 class Falcon1 : public Rocket {
 public:
-  Falcon1(unsigned int fuel_level);
+  Falcon1();
 };
 
 #endif /* FALCON1_H */

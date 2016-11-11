@@ -10,11 +10,13 @@ private:
   unsigned int launches;
 protected:
   unsigned int fuel_consumption;
+  unsigned int tank_size;
   std::string type_name;
 public:
-  Rocket(unsigned int fuel_level);
+  Rocket();
   const unsigned int get_id() const;
   void launch();
+  const unsigned int refill();
   std::string get_stats() const;
 };
 
