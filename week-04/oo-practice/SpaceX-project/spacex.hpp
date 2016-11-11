@@ -3,11 +3,12 @@
 
 #include <string>
 #include "rocket.hpp"
+#include "rocket-vector.hpp"
 
 class SpaceX {
 private:
   unsigned int fuel;
-  Rocket** rockets;
+  RocketVector rockets;
   unsigned int rocket_count;
 public:
   SpaceX(unsigned int fuel);
