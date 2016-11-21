@@ -8,5 +8,8 @@ std::string TodoList::get_all_formatted_lines() {
   for (unsigned int i = 0; i < lines.size(); ++i) {
     output << i + 1 << " - " << lines[i] << std::endl; 
   }
+  if (lines.size() == 0) {
+    output << "No todos for today! :)" << std::endl;
+  }
   return output.str();
 }
