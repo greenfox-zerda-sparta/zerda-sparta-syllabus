@@ -11,7 +11,7 @@ private:
 public:
   Command(std::string f, std::string n, std::string d);
   std::string get_formatted_details();
-  std::string execute();
+  virtual std::string execute();
 };
 
 #endif

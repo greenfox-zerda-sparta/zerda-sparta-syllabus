@@ -6,10 +6,11 @@
 
 class TodoApp {
 private:
-  std::vector<Command> commands;
+  std::vector<Command*> commands;
   void print_usage();
 public:
   TodoApp();
+  ~TodoApp();
   void run(int argc, char** argv);
 };
 

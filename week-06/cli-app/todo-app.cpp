@@ -1,22 +1,25 @@
 #include <iostream>
 #include "todo-app.hpp"
+#include "list-command.hpp"
 
 TodoApp::TodoApp() {
-  Command list_command("l", "list", "Lists all the tasks");
-  commands.push_back(list_command);
-  Command add_command("a", "add", "Adds a new task");
-  commands.push_back(add_command);
-  Command remove_command("r", "remove", "Removes a task");
-  commands.push_back(remove_command);
-  Command check_command("c", "check", "Completes a tasks");
-  commands.push_back(check_command);
+  commands.push_back(new ListCommand);
+  commands.push_back(new Command("a", "add", "Adds a new task"));
+  commands.push_back(new Command("r", "remove", "Removes a task"));
+  commands.push_back(new Command("c", "check", "Completes a tasks"));
+}
+
+TodoApp::~TodoApp() {
+  for (unsigned int i = 0; i < commands.size(); ++i) {
+    delete commands[i];
+  }
 }
 
 void TodoApp::run(int argc, char** argv) {
   if (argc == 1) {
     print_usage();
   } else {
-    std::cout << commands[0].execute();
+    std::cout << commands[0]->execute();
   }
 }
 
@@ -26,6 +29,6 @@ void TodoApp::print_usage() {
   std::cout << std::endl;
   std::cout << "Command line arguments:" << std::endl;
   for (unsigned int i = 0; i < commands.size(); ++i) {
-    std::cout << commands[i].get_formatted_details() << std::endl;
+    std::cout << commands[i]->get_formatted_details() << std::endl;
   }
 }
