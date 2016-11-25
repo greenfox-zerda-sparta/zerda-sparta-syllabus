@@ -5,7 +5,5 @@ ListCommand::ListCommand() :
   Command("l", "list", "Lists all the tasks") {}
 
 std::string ListCommand::execute(Argument argument) {
-  TodoListDatabase db;
-  TodoList todo_list = db.load();
   return todo_list.get_all_formatted_lines();
 }
