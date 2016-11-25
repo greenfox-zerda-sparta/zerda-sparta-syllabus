@@ -4,7 +4,7 @@
 char* TodoListDatabase::DATABASE_FILE_NAME = (char*)".db.txt";
 
 TodoList TodoListDatabase::load() {
-  std::ifstream db_file(".db.txt");
+  std::ifstream db_file(DATABASE_FILE_NAME);
   std::string line;
   std::vector<std::string> lines;
   while (getline(db_file, line)) {
@@ -15,6 +15,6 @@ TodoList TodoListDatabase::load() {
 }
 
 void TodoListDatabase::save(TodoList list) {
-  std::ofstream db_file(".db.txt");
+  std::ofstream db_file(DATABASE_FILE_NAME);
   db_file << list.get_to_save();
 }
