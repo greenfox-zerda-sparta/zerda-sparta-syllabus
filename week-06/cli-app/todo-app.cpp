@@ -19,13 +19,13 @@ TodoApp::~TodoApp() {
 
 void TodoApp::run(int argc, char** argv) {
   Argument argument(argc, argv);
-  if (argc == 1) {
+  if (argument.get_type() == NONE) {
     print_usage();
   } else {
-    if (argv[1][1] == 'a') {
-      std::cout << commands[1]->execute(argument);
-    } else {
-      std::cout << commands[0]->execute(argument);
+    for (unsigned int i = 0; i < commands.size(); ++i) {
+      if (commands[i]->get_flag() == argument.get_flag()) {
+        std::cout << commands[i]->execute(argument);
+      }
     }
   }
 }
