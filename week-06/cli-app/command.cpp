@@ -10,4 +10,4 @@ std::string Command::get_formatted_details() {
   return " -" + flag + "\t" + name + "\t\t" + description;
 }
 
-std::string Command::execute() {}
+std::string Command::execute(Argument argument) {}

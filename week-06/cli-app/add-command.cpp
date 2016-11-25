@@ -3,6 +3,6 @@
 AddCommand::AddCommand() :
   Command("a", "add", "Adds a new task") {}
 
-std::string AddCommand::execute() {
-  return "I'am Mister Meeseeks!! Look at mee!!\n";
+std::string AddCommand::execute(Argument argument) {
+  return "Added todo " + argument.get_string_second_argument();
 }

@@ -6,7 +6,7 @@
 class ListCommand : public Command {
 public:
   ListCommand();
-  virtual std::string execute();
+  virtual std::string execute(Argument argument);
 };
 
 #endif

@@ -2,6 +2,7 @@
 #include "todo-app.hpp"
 #include "list-command.hpp"
 #include "add-command.hpp"
+#include "argument.hpp"
 
 TodoApp::TodoApp() {
   commands.push_back(new ListCommand);
@@ -17,13 +18,14 @@ TodoApp::~TodoApp() {
 }
 
 void TodoApp::run(int argc, char** argv) {
+  Argument argument(argc, argv);
   if (argc == 1) {
     print_usage();
   } else {
     if (argv[1][1] == 'a') {
-      std::cout << commands[1]->execute();
+      std::cout << commands[1]->execute(argument);
     } else {
-      std::cout << commands[0]->execute();
+      std::cout << commands[0]->execute(argument);
     }
   }
 }

@@ -6,7 +6,7 @@
 class AddCommand : public Command {
 public:
   AddCommand();
-  virtual std::string execute();
+  virtual std::string execute(Argument argument);
 };
 
 #endif

@@ -2,6 +2,7 @@
 #define COMMAND_H
 
 #include <string>
+#include "argument.hpp"
 
 class Command {
 private:
@@ -11,7 +12,7 @@ private:
 public:
   Command(std::string f, std::string n, std::string d);
   std::string get_formatted_details();
-  virtual std::string execute();
+  virtual std::string execute(Argument argument);
 };
 
 #endif
