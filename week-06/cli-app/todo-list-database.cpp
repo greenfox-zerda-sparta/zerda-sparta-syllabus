@@ -13,3 +13,8 @@ TodoList TodoListDatabase::load() {
   TodoList todo_list(lines);
   return todo_list;
 }
+
+void TodoListDatabase::save(TodoList list) {
+  std::ofstream db_file(".db.txt");
+  db_file << list.get_to_save();
+}

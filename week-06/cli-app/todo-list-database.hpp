@@ -8,6 +8,7 @@ private:
   static char* DATABASE_FILE_NAME;
 public:
   TodoList load();
+  void save(TodoList list);
 };
 
 #endif

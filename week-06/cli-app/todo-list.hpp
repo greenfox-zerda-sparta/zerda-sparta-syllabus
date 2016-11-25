@@ -10,6 +10,8 @@ private:
 public:
   TodoList(std::vector<std::string> l);
   std::string get_all_formatted_lines();
+  std::string get_to_save();
+  void add_todo(std::string task_description);
 };
 
 #endif

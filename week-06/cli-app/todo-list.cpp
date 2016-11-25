@@ -13,3 +13,15 @@ std::string TodoList::get_all_formatted_lines() {
   }
   return output.str();
 }
+
+void TodoList::add_todo(std::string task_description) {
+  lines.push_back(task_description);
+}
+
+std::string TodoList::get_to_save() {
+  std::stringstream output;
+  for (unsigned int i = 0; i < lines.size(); ++i) {
+    output << lines[i] << std::endl;
+  }
+  return output.str();
+}
