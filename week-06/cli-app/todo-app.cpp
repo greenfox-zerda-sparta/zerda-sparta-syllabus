@@ -1,10 +1,11 @@
 #include <iostream>
 #include "todo-app.hpp"
 #include "list-command.hpp"
+#include "add-command.hpp"
 
 TodoApp::TodoApp() {
   commands.push_back(new ListCommand);
-  commands.push_back(new Command("a", "add", "Adds a new task"));
+  commands.push_back(new AddCommand);
   commands.push_back(new Command("r", "remove", "Removes a task"));
   commands.push_back(new Command("c", "check", "Completes a tasks"));
 }
@@ -19,7 +20,11 @@ void TodoApp::run(int argc, char** argv) {
   if (argc == 1) {
     print_usage();
   } else {
-    std::cout << commands[0]->execute();
+    if (argv[1][1] == 'a') {
+      std::cout << commands[1]->execute();
+    } else {
+      std::cout << commands[0]->execute();
+    }
   }
 }
 
