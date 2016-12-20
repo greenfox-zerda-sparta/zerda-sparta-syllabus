@@ -8,6 +8,7 @@ public:
   Aircraft();
   int get_ammo();
   void refill(unsigned int&);
+  unsigned int fight();
 };
 
 #endif
