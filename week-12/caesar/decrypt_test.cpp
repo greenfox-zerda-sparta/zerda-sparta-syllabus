@@ -1,3 +1,5 @@
+#ifdef TEST
+
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 #include "decrypt.hpp"
@@ -25,3 +27,4 @@ TEST_CASE("It should keep the cases", "[decrypt]") {
   REQUIRE(caesar_cypher("Ab", 1) == "Bc");
 }
 
+#endif
