@@ -3,11 +3,16 @@
 #include "file_manipulation.hpp"
 #include "program.hpp"
 
-CaesarCypherProgram::CaesarCypherProgram(int argc, char** argv) :
-  _argc(argc), _argv(argv) {};
+CaesarCypherProgram::CaesarCypherProgram() {};
 
-int CaesarCypherProgram::run() {
-  std::string input = read_file_by_file_name(_argv[1]);
-  std::cout << caesar_cypher(input, std::stoi(_argv[3])) << std::endl;
-  return 0;
+int CaesarCypherProgram::run(int argc, char** argv) {
+  try {
+    arguments.set(argc, argv);
+    std::string input = read_file_by_file_name(arguments.get_input_file_name());
+    std::cout << caesar_cypher(input, arguments.get_shift()) << std::endl;
+    return 0;
+  } catch (const char* error_message) {
+    std::cerr << error_message << std::endl;
+    return 1;
+  }
 }

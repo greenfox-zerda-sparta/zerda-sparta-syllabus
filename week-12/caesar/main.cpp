@@ -3,8 +3,8 @@
 #include "program.hpp"
 
 int main(int argc, char** argv) {
-  CaesarCypherProgram program(argc, argv);
-  return program.run();
+  CaesarCypherProgram program;
+  return program.run(argc, argv);
 }
 
 #endif

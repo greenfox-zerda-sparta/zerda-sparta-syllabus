@@ -3,6 +3,7 @@
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 #include "decrypt.hpp"
+#include "arguments.hpp";
 
 TEST_CASE("It should shift one letter", "[decrypt]" ) {
   REQUIRE(caesar_cypher("a", 1) == "b");

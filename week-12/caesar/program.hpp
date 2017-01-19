@@ -1,12 +1,14 @@
 #ifndef PROGRAM_H
 #define PROGRAM_H
 
+#include "arguments.hpp"
+
 class CaesarCypherProgram {
-  int _argc;
-  char** _argv;
+private:
+  Arguments arguments;
 public:
-  CaesarCypherProgram(int argc, char** argv);
-  int run(); 
+  CaesarCypherProgram();
+  int run(int argc, char** argv);
 };
 
 #endif
